@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Bits-N-Bites",
+    "slug": "Bits-N-Bites",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
