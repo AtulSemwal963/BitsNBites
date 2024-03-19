@@ -1,0 +1,7 @@
+Main Red- rgb(229 231 235)
+Gray Text color- #6B7280 (gray-500)
+Light gray shade background- #F6F6F6 (gray-200)
+Dark mode background color- #121212
+Light Mode background color- rgb(229 231 235)
+Dark gray shade background- #202020
+

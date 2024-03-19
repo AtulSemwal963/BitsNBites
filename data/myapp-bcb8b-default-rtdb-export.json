@@ -1,0 +1,427 @@
+[
+  {
+    "restoU": {
+      "biscuits": [
+        {
+          "image": "https://lovelocal-product-image.s3.amazonaws.com/33128_1017202218240277182013075RFACYRD.png",
+          "item": "Britannia Jim Jam Cream Biscuits",
+          "price": "10",
+          "qty": 6
+        },
+        {
+          "image": "https://www.bigbasket.com/media/uploads/p/l/264572-2_5-britannia-marie-gold-biscuits.jpg",
+          "item": "Britannia Marie Gold Biscuits",
+          "price": "18",
+          "qty": 5
+        },
+        {
+          "image": "https://i.ebayimg.com/images/g/W9YAAOSwxFRgR2nv/s-l1600.jpg",
+          "item": "Britannia The Original Bourbon - Creme Biscuit with Chocolate",
+          "price": "20",
+          "qty": 3
+        },
+        {
+          "image": "https://www.baskethunt.com/wp-content/uploads/2021/01/parle-hide-seek-chocolate-chip-cookies-100-gm-0-20200518.jpg",
+          "item": "Parle Hide and Seek Chocolate Chip Cookies",
+          "price": "30",
+          "qty": 4
+        },
+        {
+          "image": "https://www.bigbasket.com/media/uploads/p/l/40129505-2_10-parle-20-20-nice-biscuits.jpg",
+          "item": "Parle 20-20 Nice Sugar Sprinkled Biscuits",
+          "price": "10",
+          "qty": 4
+        },
+        {
+          "image": "https://5.imimg.com/data5/SELLER/Default/2023/7/329272102/PY/IN/JS/48534106/61avveubvql-sl1500-500x500.jpg",
+          "item": "Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit",
+          "price": "40",
+          "qty": 5
+        }
+      ],
+      "chips": [
+        {
+          "image": "https://pinktempo.com/cdn/shop/products/APR120004685xx8APR22_5_B.jpg?v=1667364936",
+          "item": "Lay's Potato Chips - American Style Cream & Onion Flavour",
+          "price": "20",
+          "qty": 8
+        },
+        {
+          "image": "https://images-cdn.ubuy.co.in/63505ba57b91c75d4b5ead9c-3-pack-lays-chile-limon-flavored-potato.jpg",
+          "item": "Lay's Chile Limon Potato Chips",
+          "price": "20",
+          "qty": 12
+        },
+        {
+          "image": "https://m.media-amazon.com/images/I/71CcmSuTAnL.jpg",
+          "item": "Lay's Potato Chips - India's Magic Masala",
+          "price": "20",
+          "qty": 10
+        },
+        {
+          "image": "https://i.ebayimg.com/images/g/OfQAAOSw21NkjWy4/s-l1200.webp",
+          "item": "Bingo! Tedhe Medhe Masala Tadka",
+          "price": "20",
+          "qty": 5
+        },
+        {
+          "image": "https://spencers.in/media/catalog/product/1/0/1098914.jpg",
+          "item": "Unique Bingo Mad Angles Achaari Mast",
+          "price": "20",
+          "qty": 12
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0730/2453/6864/files/40169590-2_4-doritos-nacho-chips-sweet-chilli-flavour.webp?v=1699615674&width=533",
+          "item": "Haldiram's Mexilla",
+          "price": "20",
+          "qty": 13
+        },
+        {
+          "image": "https://spicedivine.com/cdn/shop/products/masalamunch_512x638.jpg?v=1687212640",
+          "item": "Kurkure Namkeen, Masala Munch",
+          "price": "20",
+          "qty": 12
+        },
+        {
+          "image": "https://desicart.co.uk/cdn/shop/products/59-3.jpg?v=1594920275",
+          "item": "Kurkure Green Chutney Style",
+          "price": "20",
+          "qty": 9
+        },
+        {
+          "image": "https://m.media-amazon.com/images/I/71OwiJcIsjL.jpg",
+          "item": "Kurkure Yummy Cheese Puffcorn Namkeen",
+          "price": "20",
+          "qty": 11
+        },
+        {
+          "image": "https://mangamobile.cc.shopshastra.com/wp-content/uploads/2021/11/INamkeens98gKRKR1360XX1104211443_5_B.jpg",
+          "item": "Kurkure Chilly Chatka",
+          "price": "20",
+          "qty": 10
+        },
+        {
+          "image": "https://m.media-amazon.com/images/I/71WQbGdcqNL.jpg",
+          "item": "Doritos Nacho Chips 82.5g/100g, Sweet Chilli Flavour",
+          "price": "50",
+          "qty": 13
+        }
+      ],
+      "chocolates": [
+        {
+          "image": "https://rojastore.in/wp-content/uploads/2021/07/dairy.jpg",
+          "item": "Dairy Milk Chocolate Bar",
+          "price": "10",
+          "qty": 20
+        },
+        {
+          "image": "https://m.media-amazon.com/images/I/61Uyr2WiKcL.jpg",
+          "item": "Dairy Milk Chocolate",
+          "price": "20",
+          "qty": 15
+        },
+        {
+          "image": "https://candymail.co.uk/cdn/shop/products/dairy-milk-silk-fruit-and-nut-india-60g-817765.jpg?v=1684356414",
+          "item": "Dairy Milk Silk Chocolate",
+          "price": "40",
+          "qty": 10
+        },
+        {
+          "image": "https://www.goshoppi.ae/images/variants/Cadbury-Dairy-Milk-Fruit-And-Nut-100g.jpg",
+          "item": "Cadbury Dairy Milk Chocolate Bar Fruit and Nut",
+          "price": "40",
+          "qty": 13
+        },
+        {
+          "image": "https://thulo.com/images/detailed/153/79a.jpg",
+          "item": "Amul Dark Chocolate",
+          "price": "90",
+          "qty": 10
+        }
+      ],
+      "drinks": [
+        {
+          "image": "https://shopsuki.ph/cdn/shop/products/sting-soft-drinks-sting-energy-drink-strawberry-330ml-15012388995204_1024x.jpg?v=1695797860",
+          "item": "Sting Energy Drink Bottle 250ml",
+          "price": "20",
+          "qty": 8
+        },
+        {
+          "image": "https://shopsuki.ph/cdn/shop/products/sting-soft-drinks-sting-energy-drink-strawberry-330ml-15012388995204_1024x.jpg?v=1695797860",
+          "item": "Sting Energy Drink Bottle 500ml",
+          "price": "40",
+          "qty": 8
+        },
+        {
+          "image": "https://5.imimg.com/data5/SELLER/Default/2023/10/354363566/OW/EY/LE/80077257/250ml-limca-cold-drink.jpg",
+          "item": "Limca Soft Drink 250ml",
+          "price": "20",
+          "qty": 7
+        },
+        {
+          "image": "https://5.imimg.com/data5/SELLER/Default/2021/11/SC/WY/YL/51865166/new-product-500x500.jpeg",
+          "item": "Limca Soft Drink 500ml",
+          "price": "30",
+          "qty": 7
+        },
+        {
+          "image": "https://fattaak.in/cdn/shop/files/1_b43bf7da-9a9f-4297-8c42-f0311d39e567.jpg?v=1688033049",
+          "item": "Coca-Cola Original Taste Soft Drink 250ml",
+          "price": "20",
+          "qty": 9
+        },
+        {
+          "image": "https://images-cdn.ubuy.co.in/6350f3dd88e36a5511783026-coca-cola-original-bottle-500ml-pack-of.jpg",
+          "item": "Coca-Cola Original Taste Soft Drink 500ml",
+          "price": "30",
+          "qty": 5
+        },
+        {
+          "image": "https://5.imimg.com/data5/SELLER/Default/2023/6/317422456/SQ/FO/EQ/110694738/amul-kool-premium-kesar-milk-drink.jpg",
+          "item": "Amul Kool - Kesar",
+          "price": "25",
+          "qty": 6
+        },
+        {
+          "image": "https://spicedivine.ca/cdn/shop/products/amul-kool-koko-chocolate-milk_1200x1200_crop_center.jpg?v=1687211370",
+          "item": "Amul Kool Koko",
+          "price": "25",
+          "qty": 10
+        }
+      ],
+      "iceCreams": [
+        {
+          "image": "https://store.rewardsplus.in/uploads/app/public/company/product/164422025939.jpg",
+          "item": "Kwality Walls Orange Maha Bar ",
+          "price": "10",
+          "qty": 12
+        },
+        {
+          "image": "https://ik.imagekit.io/dunzo/tr:w-$w$,h-$h$,cm-pad_resize/7a27c1c8504811ed849e4d8b09029771_PRODUCT_5bf85868269a0f1dd3c375d7_1.jpg",
+          "item": "Kwality Walls Choco Bar",
+          "price": "10",
+          "qty": 6
+        },
+        {
+          "image": "https://www.bigbasket.com/media/uploads/p/xxl/1209601-5_1-kwality-walls-cornetto-frozen-dessert-double-chocolatebutterscotch-115ml-edisc-oreo-120ml.jpg",
+          "item": "Kwality Walls Cornetto Double Chocolate Frozen Dessert Cone",
+          "price": "40",
+          "qty": 9
+        },
+        {
+          "image": "https://lovelocal-product-image.s3.amazonaws.com/product_FNTI3SI80U0RHNSR.jpg",
+          "item": "Kwality Walls Butterscotch Cornetto Frozen Dessert",
+          "price": "40",
+          "qty": 10
+        },
+        {
+          "image": "https://www.jiomart.com/images/product/original/491971482/kwality-wall-s-cornetto-chokissimo-choco-brownie-ice-cream-110-ml-wrap-product-images-o491971482-p595418033-0-202211181209.jpg?im=Resize=(1000,1000)",
+          "item": "Kwality walls Cornetto - Chokissimo",
+          "price": "70",
+          "qty": 8
+        }
+      ],
+      "snacks": [
+        {
+          "image": "https://thebasicneeds.in/3598-large_default/nestle-maggi-masala-noodles-2-pc.jpg",
+          "item": "Nestle Mixed Flours Maggi Noodles",
+          "price": "12",
+          "qty": 18
+        },
+        {
+          "image": "https://www.bigbasket.com/media/uploads/p/l/259985-2_10-britannia-gobbles-choco-chill-cake.jpg",
+          "item": "Britannia Cakes Choco Chill",
+          "price": "30",
+          "qty": 13
+        },
+        {
+          "image": "https://www.bigbasket.com/media/uploads/p/l/70000797_3-haldirams-namkeen-nut-cracker-del.jpg",
+          "item": "Haldiram's Nut Cracker Namkeen",
+          "price": "20",
+          "qty": 9
+        },
+        {
+          "image": "https://www.jiomart.com/images/product/original/490226117/haldiram-s-punjabi-tadka-namkeen-220-g-product-images-o490226117-p490226117-0-202203151906.jpg?im=Resize=(1000,1000)",
+          "item": "Haldiram's Punjabi Tadka Namkeen",
+          "price": "20",
+          "qty": 12
+        }
+      ]
+    }
+  },
+  {
+    "tuckShop":{
+      "pens":[
+        {"image":"https://5.imimg.com/data5/AH/HR/DP/SELLER-14312617/nataraj-ball-pen-500x500.jpg",
+        "item":"Natraj Classic Ball Pen",
+        "price":"2",
+        "qty":10
+      },
+      {
+        "image":"https://cdn.fcglcdn.com/brainbees/images/products/583x720/13948365b.webp",
+        "item":"Nataraj Gelix Black Gel Pen",
+        "price":"5",
+        "qty":8
+      },
+      {
+        "image":"https://www.rapiddeliveryservices.in/uploads/69191-.jpg",
+        "item":"Nataraj Gelix Blue Gel Pen",
+        "price":"5",
+        "qty":15
+      },
+      {
+        "image":"https://5.imimg.com/data5/MG/KC/MY-3871935/cello-ball-pen.jpg",
+        "item":"Cello Butterflow Blue ",
+        "price":"10",
+        "qty":7
+      },
+      {
+        "image":"https://cdn.shopaccino.com/ipurofoods/products/butterflowblack500500-783404_l.jpg?v=503",
+        "item":"Cello Butterflow Black",
+        "price":"10",
+        "qty":9
+      },
+      {
+        "image":"https://m.media-amazon.com/images/I/31JhsHSns5L._AC_UF1000,1000_QL80_.jpg",
+        "item":"Hauser XO Gel Pen",
+        "price":"10",
+        "qty":10
+      },
+      {
+        "image":"https://m.media-amazon.com/images/I/61gyUiejcbL._AC_UF1000,1000_QL80_.jpg",
+        "item":"Reynolds Trimax Blue",
+        "price":"40",
+        "qty":5
+      },
+      {
+        "image":"https://m.media-amazon.com/images/I/41BmR-zzqmL.jpg",
+        "item":"Reynolds Trimax Black",
+        "price":"40",
+        "qty":9
+      }
+      ],
+      "pencils":[
+        {
+          "image":"https://5.imimg.com/data5/SELLER/Default/2023/11/359571666/UO/RU/LK/193565120/51bddh1i6zl-sl1200-500x500.jpg",
+          "item":"Nataraj Writing Pencil",
+          "price":"2",
+          "qty":10
+        },
+        {
+          "image":"https://5.imimg.com/data5/ECOM/Default/2022/6/QM/ZO/GR/25436863/4b-cad7a42a-3513-40be-abc8-527c209144e1-500x500.jpg",
+          "item":"Apsara Drawing Pencil",
+          "price":"5",
+          "qty":15
+        },
+        {
+          "image":"https://4.imimg.com/data4/CM/VO/MY-6443117/extra-dark-pencil-250x250.jpg",
+          "item":"Apsara Extra Dark Pencil",
+          "price":"5",
+          "qty":10
+        },
+        {
+          "image":"https://5.imimg.com/data5/SELLER/Default/2020/8/MS/HH/RY/37217807/camlin-klick-mechanical-pencil-0-5-mm.jpg",
+          "item":"Camlin Trendy Klick Mechanical Pencil 0.7 mm",
+          "price":"10",
+          "qty":5
+        },
+        {
+          "image":"i0.wp.com/www.statmo.in/wp-content/uploads/2017/02/nataraj-define.1.jpg?fit=510%2C600&ssl=1",
+          "item":"Natraj Define Clutch Pencil",
+          "price":"25",
+          "qty":8
+        }
+      ],
+      "notebooks":[
+        {
+          "image":"https://i0.wp.com/www.statmo.in/wp-content/uploads/2018/03/my-sweetheart.jpg?fit=900%2C910&ssl=1",
+          "item":"Classmate Notebook 20 Pages Single Line",
+          "price":"20",
+          "qty":16
+        },
+        {
+          "image":"https://5.imimg.com/data5/JM/WF/ML/ANDROID-89922337/product-jpeg-500x500.jpeg",
+          "item":"Chillian Paper Spiral Notebook",
+          "price":"30",
+          "qty":16
+        },
+        {
+          "image":"https://www.bigbasket.com/media/uploads/p/l/40197933_1-papergrid-long-notebook-unruled-72-pages-soft-cover.jpg",
+          "item":"Papergrid Notebook - Unruled",
+          "price":"30",
+          "qty":8
+        },
+        {
+          "image":"https://www.bigbasket.com/media/uploads/p/xxl/40005742_4-classmate-notebook-a4-six-subject-single-line-ruling.jpg",
+          "item":"Classmate Notebook - A4, Six Subject, Single Line Ruling",
+          "price":"180",
+          "qty":13
+        },
+        {
+          "image":"https://rukminim2.flixcart.com/image/850/1000/diary-notebook/h/z/j/classmate-2000277cm-original-imaecfg2jfnfs6je.jpeg?q=90&crop=false",
+          "item":"Classmate Chemistry Practical Notebook",
+          "price":"70",
+          "qty":13
+        }
+      ],
+      "calculators":[
+        {
+          "image":"https://5.imimg.com/data5/OL/DH/CW/SELLER-92598089/calculater-citizen.jpg",
+          "item":"Basic Calculator Black Citizen Calculator",
+          "price":"100",
+          "qty":5
+        },
+        {
+          "image":"https://m.media-amazon.com/images/I/51TZOp6ABiL._AC_UF1000,1000_QL80_.jpg",
+          "item":"Basic Calculator Black Citizen Calculator",
+          "price":"500",
+          "qty":10
+        }
+      ],
+      "supplies":[
+        {
+          "image":"https://www.hindustanpencils.com/wp-content/uploads/2017/09/621-30cm-scale-inside-product-page.jpg",
+          "item":"Nataraj 15 Cm Scale",
+          "price":"10",
+          "qty":15
+        },
+        {
+          "image":"https://www.hindustanpencils.com/wp-content/uploads/2017/09/621-30cm-scale-inside-product-page.jpg",
+          "item":"Natraj Scale (621 30cm Ruler)",
+          "price":"20",
+          "qty":20
+        },
+        {
+          "image":"https://i0.wp.com/storef.in/wp-content/uploads/2021/11/Apsara-Non-Dust-Eraser.jpg?fit=750%2C1000&ssl=1",
+          "item":"Apsara Non Dust Eraser Big",
+          "price":"10",
+          "qty":20
+        },
+        {
+          "image":"https://m.media-amazon.com/images/I/71pQPtFefML.jpg",
+          "item":"Apsara Long Point Sharpeners",
+          "price":"10",
+          "qty":15
+        },
+        {
+          "image":"https://5.imimg.com/data5/SELLER/Default/2021/4/SB/GU/UK/101050313/3824-adjustable-compass-500x500.jpg",
+          "item":"Stainless Steel Silver 3824 Adjustable Compass",
+          "price":"20",
+          "qty":15
+        },
+        {
+          "image":"https://www.bigbasket.com/media/uploads/p/l/40006128_6-pidilite-fevistik-super-glue-stick.jpg",
+          "item":"Fevistik Super Glue Stick",
+          "price":"10",
+          "qty":11
+        },
+        {
+          "image":"https://www.sitaramstationers.com/wp-content/uploads/2020/07/fevicol-100gms.jpeg",
+          "item":"Fevicol 100gms",
+          "price":"30",
+          "qty":13
+        }
+      ]
+    }
+  }
+]
