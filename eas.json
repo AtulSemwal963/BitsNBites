@@ -7,7 +7,7 @@
       "distribution": "internal",
       "android": {
         "gradleCommand": ":app:assembleDebug",
-        "image": "ubuntu-18.04-jdk-11-ndk-r19c"
+        "image": "./data/images/logo.png"
       },
       "ios": {
         "buildConfiguration": "Debug"

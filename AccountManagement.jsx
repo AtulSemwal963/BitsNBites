@@ -1,274 +1,211 @@
-// import React, { useCallback, useEffect, useState } from "react";
-// import { Alert, Button, Linking, Platform, StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Image, } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Logo from './data/images/logo.png';
+import { useGlobalState, setGlobalState } from './GlobalState';
+import ToastManager, { Toast,toast } from 'toastify-react-native';
 
 
 
-// const AccountManagement = () => {
 
-//     const url1 = "https://github.com/vishal-pawar";
-//     const url2 = "abcd://abcd.com";
-//     const number = '+910987654321'
-//     const message = "hello there!!"
 
-//     const openAlarmApp = async() => {
-//       if (Platform.OS === 'ios') {
-//         Linking.openURL('clock://');
-//     } else if (Platform.OS === 'android') {
-//         // On Android, you can try opening the system settings
-//         // where users can find the alarm app.
-//         await Linking.openSettings();
-//     } else {
-//         console.log("Could not open Alarm App");
-//     }
-//   }
+const AccountManagement = () => {
+  const [mode] = useGlobalState('mode');
+  const [backGroundColor] = useGlobalState('backGroundColor');
+  const [fontColor] = useGlobalState('fontColor');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [mail, onChangeMail] = useState('');
+  const [pass, onChangePass] = useState('');
+  const [loginClicked, setLoginClicked] = useState(false);
+  useEffect(() => {
+    console.log('isLoggedIn:', isLoggedIn);
+  }, [isLoggedIn]);
+  useEffect(() => {
+    loadLoginStatus(); 
+  }, []);
+
+  const handleLoginPress = async() => {
     
-//     const sendTextMessage = useCallback(async (phNumber, message) => {
-//         const separator = Platform.OS === 'ios' ? '&' : '?'
-//         const url = `sms:${phNumber}${separator}body=${message}`
-//         await Linking.openURL(url)
-//     }, [])
+    setLoginClicked(true);
+    await handleLogin() 
+  };
+ 
+  const showToastsSuccess = async (message, email) => {
+    Toast.success(message);
+    setIsLoggedIn(true);
+    const saveData = async () => {
+      try {
+        setGlobalState('isLoggedIn',true)
+        await AsyncStorage.setItem('isLoggedIn', 'true');
+        await AsyncStorage.setItem('userEmail', mail);
+        console.log('isLoggedIn and userEmail saved to AsyncStorage',);
+        const retrievedEmail = await AsyncStorage.getItem('userEmail');
+        console.log('Retrieved userEmail from AsyncStorage:', retrievedEmail);
+       
+      } catch (error) {
+        console.error('Error saving data to AsyncStorage:', error);
+      }
+    };
+  
+    saveData();
+  
+    setGlobalState('isLoggedIn', true, () => {
+      console.log('isLoggedIn updated to true in global state');
+    });
+    
+    
+  };
+  
 
-//     const openPhotos = () => {
-//         if (Platform.OS == 'ios') {
-//             Linking.openURL("photos-redirect://");
-//         } else if (Platform.OS == 'android') {
-//             Linking.openURL("content://media/internal/images/media");
-//         } else {
-//             console.log("Could not open Photos")
-//         }
-//     }
+  const showToastsError = (message) => {
+    Toast.error(message);
+  };
 
-//     const openInsta = () => {
-//         Linking.openURL('instagram://user?username=instagram')
-//             .catch(() => {
-//                 Linking.openURL('https://www.instagram.com/instagram');
-//             })
-//     }
-//     return (
-//         <View style={styles.container}>
-           
-//             <View style={styles.buttonContainer}>
-//                 <Button title="Open Alarm App" onPress={openAlarmApp} color="orange" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="call" onPress={() => {
-//                     Linking.openURL(`tel:${number}`)
-//                 }} color="red" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="SMS" onPress={() => sendTextMessage(number, message)} color="gold" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="mail" onPress={() => {
-//                     Linking.openURL(`mailto:support@me.com?subject=testing&body=${message}`)
-//                 }} color="#ff6767" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="Open setting" onPress={() => {
-//                     Linking.openSettings()
-//                 }} color="#112233" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="Open Whatsapp" onPress={() => {
-//                     Linking.openURL(`whatsapp://send?phone=${number}&text=${message}`)
-//                 }} color="green" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="Map" onPress={() => {
-//                     Linking.openURL(`https://www.google.com/maps/search/?api=1&query=india`)
-//                 }} color="" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="open Youtube" onPress={() => {
-//                     Linking.openURL(`https://www.youtube.com`)
-//                 }} color="darkred" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="open facebook" onPress={() => {
-//                     Linking.openURL(`fb://profile/`)
-//                 }} color="blue" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="open Gallery" onPress={openPhotos} color="powderblue" />
-//             </View>
-//             <View style={styles.buttonContainer}>
-//                 <Button title="Open Instagram" onPress={openInsta} color="steelblue" />
-//             </View>
-//         </View>
-//     );
-// };
+  const handleLogout = async() => {
+    setIsLoggedIn(false);
+      Toast.success("Successfully Logged Out");
+   setGlobalState('isLoggedIn', false, () => {
+     console.log('isLoggedIn updated to false in global state');
+   });
+   saveLoginStatus(false);
+  };
+  const handleLogin = async () => {
+    const umail = mail;
+    const password = pass;
+    const data = { umail, password };
 
-// const styles = StyleSheet.create({
-//     container: { flex: 1, justifyContent: "center", alignItems: "center" },
-//     buttonContainer: {
-//         margin: 10
-//     }
-// });
+    try {
+      const response = await fetch('https://bits-n-bitesbackendserver-1.onrender.com/accounts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-// export default AccountManagement
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData.message);
+        if (responseData.message === 'Account created successfully' || responseData.message === 'User logged in successfully') {
+          showToastsSuccess(responseData.message);
+        } else {
+          showToastsError(responseData.message);
+        }
+      } else {
+        console.error('Error:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+    }
+  };
+  useEffect(() => {
+    if (loginClicked) {
+      handleLogin(); 
+      onChangeMail(''); 
+      onChangePass(''); 
+      setLoginClicked(false);
+    }
+  }, [loginClicked]);
 
-import React, {useState} from 'react';
-import {Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
+  const loadLoginStatus = async () => {
+    try {
+      const storedIsLoggedIn = await AsyncStorage.getItem('isLoggedIn');
+      if (storedIsLoggedIn !== null) {
+        setIsLoggedIn(storedIsLoggedIn === 'true');
+      }
+    } catch (error) {
+      console.error('Error loading login status:', error);
+    }
+  };
 
-const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const saveLoginStatus = async (isLoggedIn) => {
+    try {
+      await AsyncStorage.setItem('isLoggedIn', isLoggedIn.toString());
+    } catch (error) {
+      console.error('Error saving login status:', error);
+    }
+  };
+
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
+    <View className="h-max w-max" style={{ backgroundColor: mode, height: '100%', width: '100%', flexDirection: 'column', alignItems: 'center' }}>
+      <ToastManager duration={5000} width={300} height={70} className="text-lg" />
+      <View classname="my-8" style={{ height: '25%', width: '100%', flexDirection: 'row', justifyContent: 'center', marginTop: '3%' }}>
+        <Image source={Logo} style={{ height: 140, width: 140 }} classname="self-center" />
+      </View>
+  
+      <View
+        className="rounded-2xl"
+        style={{
+          height: '70%',
+          width: '95%',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '3%',
+          backgroundColor: backGroundColor,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 0.8,
+          shadowRadius: 2,
+        }}
+      >
+        <Text className="p-4 text-center font-semibold" style={{ color: fontColor, fontSize: 13 }}>
+          Hate waiting in lines? Skip the rush with Bits 'n' Bites!
+        </Text>
+        <TextInput
+          className="rounded-2xl"
+          style={{
+            height: 40,
+            margin: 12,
+            borderWidth: 2,
+            borderColor: '#BF1A2F',
+            padding: 10,
+            backgroundColor: { mode },
+            width: '90%',
+            color: fontColor,
+          }}
+          onChangeText={onChangeMail}
+          value={mail}
+          placeholder="University E-Mail"
+          placeholderTextColor="#6B7280"
+          keyboardType="default"
+        />
+        <TextInput
+          className="rounded-2xl"
+          style={{
+            height: 40,
+            margin: 12,
+            borderWidth: 2,
+            borderColor: '#BF1A2F',
+            padding: 10,
+            backgroundColor: { mode },
+            width: '90%',
+            color: fontColor,
+          }}
+          onChangeText={onChangePass}
+          value={pass}
+          placeholder="Password"
+          placeholderTextColor="#6B7280"
+          keyboardType="numeric"
+          secureTextEntry={true}
+        />
+        {!isLoggedIn && ( 
+          <TouchableOpacity onPress={handleLoginPress} className="rounded-lg" style={{ marginTop: 40, backgroundColor: '#BF1A2F', width: '80%' }}>
+            <Text className="font-semibold text-base p-1" style={{ color: 'white', textAlign: 'center' }}>
+              Login
+            </Text>
+          </TouchableOpacity>
+        )}
+        {isLoggedIn && ( 
+          <TouchableOpacity onPress={handleLogout} className="rounded-lg" style={{ marginTop: 30, backgroundColor: '#BF1A2F', width: '80%' }}>
+            <Text className="font-semibold text-base p-1" style={{ color: 'white', textAlign: 'center' }}>
+              Logout
+            </Text>
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
+  
 };
 
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-});
-
-export default App;
-// import { LogLevel, OneSignal } from 'react-native-onesignal';
-
-// // Add OneSignal within your App's root component
-// const AccountManagement = () => {
-
-//   // Remove this method to stop OneSignal Debugging
-//   OneSignal.Debug.setLogLevel(LogLevel.Verbose);
-
-//   // OneSignal Initialization
-//   OneSignal.initialize("ONESIGNAL_APP_ID");
-
-//   // requestPermission will show the native iOS or Android notification permission prompt.
-//   // We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-//   OneSignal.Notifications.requestPermission(true);
-
-//   // Method for listening for notification clicks
-//   OneSignal.Notifications.addEventListener('click', (event) => {
-//     console.log('OneSignal: notification clicked:', event);
-//   });
-
-// }
-
-// export default AccountManagement;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const useMount = func => useEffect(() => func(), []);
-
-// const useInitialURL = () => {
-//     const [url, setUrl] = useState(null);
-//     const [processing, setProcessing] = useState(true);
-
-//     useMount(() => {
-//         const getUrlAsync = async () => {
-//             // Get the deep link used to open the app
-//             const initialUrl = await Linking.getInitialURL();
-
-//             // The setTimeout is just for testing purpose
-//             setTimeout(() => {
-//                 setUrl(initialUrl);
-//                 setProcessing(false);
-//             }, 1000);
-//         };
-
-//         getUrlAsync();
-//     });
-
-//     return { url, processing };
-// };
-
-
-{/* <Text>
-                {processing
-                    ? `Processing the initial url from a deep link`
-                    : `The deep link is: ${initialUrl || "None"}`}
-            </Text> */}
+export default AccountManagement;

@@ -8,13 +8,11 @@ const ThemeSelectionPage = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [mode, setMode] = useGlobalState('mode');
   const [modeText, setModeText] = useState(mode === '#121212' ? 'Dark Mode' : 'Light Mode');
-  
-  // Get fontColor and backgroundColor from global state
   const [fontColor, setFontColor] = useGlobalState('fontColor');
   const [backgroundColor, setBackgroundColor] = useGlobalState('backGroundColor');
   
   useEffect(() => {
-    loadMode(); // Load mode from AsyncStorage on component mount
+    loadMode();
   }, []);
 
   useEffect(() => {
@@ -37,7 +35,6 @@ const ThemeSelectionPage = () => {
         setMode(storedMode);
         setIsEnabled(storedMode === '#121212');
         setModeText(storedMode === '#121212' ? 'Dark Mode' : 'Light Mode');
-        // No need to set fontColor and backgroundColor here, they will be updated in the useEffect
       }
     } catch (error) {
       console.error('Error loading mode:', error);
@@ -54,8 +51,9 @@ const ThemeSelectionPage = () => {
 
   return (
     <View style={{ backgroundColor: mode, alignItems: 'center', flex: 1 }}>
+      <View>
       <Text className="text-lg font-semibold text-gray-500 self-start my-4 mx-4">Toggle Mode</Text>
-      <View className="flex-row justify-around rounded-xl" style={{ backgroundColor: backgroundColor, width: "95%" }}>
+      <View className="flex-row justify-around rounded-xl" style={{  width: "95%" }}>
         <Text className="justify-center font-semibold top-3" style={{ fontSize: 17, color: fontColor }}>{modeText}</Text>
         <Switch
           trackColor={{ false: '#767577', true: '#F98080' }}
@@ -63,9 +61,10 @@ const ThemeSelectionPage = () => {
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleSwitch}
           value={isEnabled}
-          style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }} // Scale the Switch
+          style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
         />
       </View>
+    </View>
     </View>
   );
 };

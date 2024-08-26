@@ -10,6 +10,10 @@
       "eas": {
         "projectId": "76e41986-87b0-473a-bdb0-8145cb643bf2"
       }
+    },
+    "splash": {
+      "image": "./data/images/logo.png",
+      "backgroundColor":"#BF1A2F"
     }
   }
 }
